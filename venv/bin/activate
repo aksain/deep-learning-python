@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/amit-kumar/GDrive/Repositories/GitHub/deeplearning/venv"
+VIRTUAL_ENV="/home/amit-kumar/GDrive/Repositories/GitHub/deep-learning-python/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

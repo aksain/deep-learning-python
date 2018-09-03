@@ -1,4 +1,4 @@
-#!/home/amit-kumar/GDrive/Repositories/GitHub/deeplearning/venv/bin/python
+#!/home/amit-kumar/GDrive/Repositories/GitHub/deep-learning-python/venv/bin/python
 
 import sys
 import getopt
