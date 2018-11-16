@@ -135,7 +135,6 @@ with open("../data/diseases_conditions/A_Hemophilia_(Hemophilia)") as f:
     DG = nx.DiGraph()
     for line in f.readlines():
 
-
         clean_text = line
         for clean_reg in clean_regs:
             clean_text = re.sub(clean_reg, '', clean_text)
@@ -150,6 +149,7 @@ with open("../data/diseases_conditions/A_Hemophilia_(Hemophilia)") as f:
             print sentence_span
 
             for noun_chunk in sentence_span.noun_chunks:
+                print noun_chunk
                 DG.add_node(noun_chunk.text)
 
             for token in sentence_span:
