@@ -1,0 +1,49 @@
+
+NOUN - Add to list and noun chunks
+VERB - Part of Noun Chunks
+
+
+NOUN - find matching noun chunk - Add noun chunk to list of tokens and noun chunks
+VERB - find matching noun chunk - 
+
+
+
+
+
+NOUN : ['find', [Matching Noun Chunk]]
+Matching Noun Chunk : ['true', []]
+
+
+NOUN : [{edge: '1', nodes: [Noun Chunk]}]
+Noun Chunk : [{edge: '1', function: "", nodes: []}]
+
+
+Noun -> find matching noun chunks -> Add Noun Ch
+
+
+Tree - 
+
+
+
+			Noun (condition = token pos is Noun)
+			Noun Chunk (condition = None)
+			Verify Noun Chunk is present in Stack (condition = (Noun Chunk != null))
+			Add Noun Chunk (condition = (verifyResult = True))
+
+
+			Proper Noun (condition = token pos is Propn)
+			Noun Chunk (condition = None)
+			Verify Noun Chunk is present in Stack (condition = (Noun Chunk != null))
+			Add Noun Chunk (condition = (verifyResult = True))
+			Add Proper Noun
+			
+
+			Verb (condition = token pos is Verb)
+			Noun Chunk (condition = None)
+			Add Verb (condition = Noun Chunk == null)
+
+
+
+
+
+

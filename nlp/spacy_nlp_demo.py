@@ -5,7 +5,7 @@ import spacy
 nlp = spacy.load('en')
 
 # Text needs to be in unicode string
-doc = nlp(u'Hemophilia is not one disease but also one of a group of inherited bleeding disorders')
+doc = nlp(u'Haemophilia is a mostly inherited genetic disorder that impairs the body\'s ability to make blood clots, a process needed to stop bleeding')
 
 print "\n\nSentences in the analysed text..."
 for sentence_span in doc.sents:
