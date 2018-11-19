@@ -1,4 +1,5 @@
 import networkx as nx
+import string
 
 
 class Token:
@@ -11,11 +12,21 @@ class Token:
     def __repr__(self):
         return self.text
 
+    def __eq__(self, other):
+        return string.lower(self.text) == string.lower(other.text)
+
+    def __hash__(self):
+        return hash(string.lower(self.text))
+
     def prepend_text(self, text):
         self.text = text + "" + self.text
 
     def append_text(self, text):
         self.text += " " + text
+
+    def is_more_concrete_version_of(self, other):
+        # print "Evaluating: " + other.text + ". Self: " + self.text
+        return " " + string.lower(other.text) in string.lower(self.text) or string.lower(other.text) + " " in string.lower(self.text)
 
 
 class LinkedNode:
@@ -129,19 +140,16 @@ class Stack:
         return self.__items.__repr__()
     
     
-class SimpleGraph:
-    def __init__(self):
-        self.__items
-    
-
 class DecipheredSentence:
     def __init__(self):
         self.graph_tokens = nx.DiGraph()
-        self.list_tokens = LinkedList()
+        self.conjuctions = Stack()
         self.noun_chunks = Stack()
         self.propn_chunks = Stack()
         self.verbs = Stack()
         self.neg_advs = Stack()
         
     def __repr__(self):
-        return "Token List: " + str(self.list_tokens) + "\nNoun Chunks: " + str(self.noun_chunks) + "\nProper Noun Chunks: " + str(self.propn_chunks) + "\nVerbs: " + str(self.verbs) + "\nNeg Adv: " +  str(self.neg_advs)
+        return "Conjuctions: " + str(self.conjuctions) + "\nNoun Chunks: " + str(self.noun_chunks) \
+               + "\nProper Noun Chunks: " + str(self.propn_chunks) + "\nVerbs: " + str(self.verbs) + "\nNeg Adv: " \
+               + str(self.neg_advs)
